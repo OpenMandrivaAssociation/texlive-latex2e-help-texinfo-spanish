@@ -1,12 +1,12 @@
-# revision 24109
+# revision 29725
 # category Package
 # catalog-ctan undef
 # catalog-date undef
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-latex2e-help-texinfo-spanish
-Version:	20111103
-Release:	2
+Version:	20131011
+Release:	1
 Summary:	TeXLive latex2e-help-texinfo-spanish package
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -22,14 +22,13 @@ TeXLive latex2e-help-texinfo-spanish package.
 
 #-----------------------------------------------------------------------
 %files
+%doc %{_infodir}/latex2e-es.info*
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.dbk
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.html
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.pdf
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.texi
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.txt
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.xml
-%doc %{_infodir}/latex2e-es.info*
-
 #-----------------------------------------------------------------------
 %prep
 %setup -c -a0 -a1
@@ -37,21 +36,7 @@ TeXLive latex2e-help-texinfo-spanish package.
 %build
 
 %install
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf texmf-dist %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar doc %{buildroot}%{_texmfdistdir}
 mkdir -p %{buildroot}%{_infodir}
-mv %{buildroot}%{_texmfdir}/doc/info/*.info %{buildroot}%{_infodir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20111103-2
-+ Revision: 753129
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20111103-1
-+ Revision: 718808
-- texlive-latex2e-help-texinfo-spanish
-- texlive-latex2e-help-texinfo-spanish
-- texlive-latex2e-help-texinfo-spanish
-- texlive-latex2e-help-texinfo-spanish
-
+mv %{buildroot}%{_texmfdistdir}/doc/info/*.info %{buildroot}%{_infodir}
