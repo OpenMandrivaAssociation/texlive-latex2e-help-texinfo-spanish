@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-latex2e-help-texinfo-spanish
 Version:	20131011
-Release:	2
+Release:	3
 Summary:	TeXLive latex2e-help-texinfo-spanish package
 Group:		Publishing
 URL:		http://tug.org/texlive
