@@ -1,12 +1,12 @@
-# revision 29725
+# revision 34129
 # category Package
 # catalog-ctan undef
 # catalog-date undef
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-latex2e-help-texinfo-spanish
-Version:	20131011
-Release:	6
+Version:	20140619
+Release:	1
 Summary:	TeXLive latex2e-help-texinfo-spanish package
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -29,6 +29,7 @@ TeXLive latex2e-help-texinfo-spanish package.
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.texi
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.txt
 %doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.xml
+
 #-----------------------------------------------------------------------
 %prep
 %setup -c -a0 -a1
