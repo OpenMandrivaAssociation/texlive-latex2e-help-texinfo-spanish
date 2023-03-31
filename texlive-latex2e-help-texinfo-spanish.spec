@@ -1,6 +1,6 @@
 Name:		texlive-latex2e-help-texinfo-spanish
 Version:	61937
-Release:	1
+Release:	2
 Summary:	TeXLive latex2e-help-texinfo-spanish package
 Group:		Publishing
 URL:		http://tug.org/texlive
