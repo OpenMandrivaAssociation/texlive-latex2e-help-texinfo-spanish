@@ -1,37 +1,25 @@
-Name:		texlive-latex2e-help-texinfo-spanish
-Version:	61937
-Release:	2
-Summary:	TeXLive latex2e-help-texinfo-spanish package
+%global tl_name latex2e-help-texinfo-spanish
+%global tl_revision 75712
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	Unofficial reference manual covering LaTeX2e
 Group:		Publishing
-URL:		https://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex2e-help-texinfo-spanish.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/latex2e-help-texinfo-spanish.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/info/latex2e-help-texinfo
+License:	other-free
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/latex2e-help-texinfo-spanish.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/latex2e-help-texinfo-spanish.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive latex2e-help-texinfo-spanish package.
+The manual is provided as Texinfo source (which was originally derived
+from the VMS help file in the DECUS TeX distribution of 1990, with many
+subsequent changes). This is a collaborative development, and details of
+getting involved are to be found on the package home page. A Spanish
+translation is included here, and a French translation is available as a
+separate package. All the other formats in the distribution are derived
+from the Texinfo source, as usual.
 
-#-----------------------------------------------------------------------
-%files
-%doc %{_infodir}/latex2e-es.info*
-%doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.dbk
-%doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.html
-%doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.pdf
-%doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.texi
-%doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.txt
-%doc %{_texmfdistdir}/doc/latex/latex2e-help-texinfo-spanish/latex2e-es.xml
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_infodir}
-mv %{buildroot}%{_texmfdistdir}/doc/info/*.info %{buildroot}%{_infodir}
